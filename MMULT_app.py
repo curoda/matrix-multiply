@@ -7,10 +7,10 @@ import streamlit as st
 import pandas as pd
 import math
 import numpy as np
-#import seaborn as sns
+import seaborn as sns
 from datetime import date
 import base64
-#sns.set_style("whitegrid")
+sns.set_style("whitegrid")
 
 
 def download_widget(object_to_download, download_file="download.csv", key=None):
@@ -79,8 +79,8 @@ def main():
         matABC = matA@matB@matC
 
         # display the result
-        #dfABC_complex = pd.DataFrame(matABC).applymap(lambda z: "%0.3f + %0.3fi" % (z.real, z.imag))
-        #st.write(dfABC_complex)
+        dfABC_complex = pd.DataFrame(matABC).applymap(lambda z: "%0.3f + %0.3fi" % (z.real, z.imag))
+        st.write(dfABC_complex)
 
         # download the result
         download_widget(dfABC_complex,key="complex_download",download_file="MMult_%s.csv" % (str(date.today())))
