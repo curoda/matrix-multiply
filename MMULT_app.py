@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import math
 import numpy as np
-import seaborn as sns
+#import seaborn as sns
 from datetime import date
 import base64
 sns.set_style("whitegrid")
