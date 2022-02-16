@@ -30,7 +30,7 @@ def download_widget(object_to_download, download_file="download.csv", key=None):
 #    return f'<a href="data:file/txt;base64,{b64}" download="{download_filename}">{download_link_text}</a>'
 
 # Get the file
-file1 = st.file_uploader("Choose a file", "xlsx", key=1)
+file1 = st.file_uploader("Choose a file", "xlsx,csv", key=1)
 
 def Read_and_Display(key=0):
     # Get the file
