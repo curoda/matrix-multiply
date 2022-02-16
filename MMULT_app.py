@@ -53,7 +53,7 @@ def Read_and_Display(key=0):
         mat1 = df1_complex.to_numpy()
 
         # display it
-        dfAB_complex = pd.DataFrame(mat1).applymap(lambda z: "%0.3f %+0.3fi" % (z.real, z.imag))
+        dfAB_complex = pd.DataFrame(mat1).applymap(lambda z: "%0.3f%+0.3fi" % (z.real, z.imag))
         st.write(dfAB_complex)
         return mat1
     else:
@@ -83,11 +83,11 @@ def main():
         matABC = matA@matB@matC
 
         # display the result
-        dfABC_complex = pd.DataFrame(matABC).applymap(lambda z: "%0.3f %+0.3fi" % (z.real, z.imag))
+        dfABC_complex = pd.DataFrame(matABC).applymap(lambda z: "%0.3f%+0.3fi" % (z.real, z.imag))
         st.write(dfABC_complex)
 
         # download the result
-        download_widget(dfABC_complex,key="complex_download",download_file="MMult_%s.csv" % (str(date.today())))
+        download_widget(dfABC_complex,key="complex_download",download_file="MMult_%s.xlsx" % (str(date.today())))
 
 
 if __name__ == "__main__":
