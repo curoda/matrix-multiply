@@ -87,7 +87,7 @@ def main():
         st.write(dfABC_complex)
 
         # download the result
-        download_widget(dfABC_complex,key="complex_download",download_file="MMult_%s.xlsx" % (str(date.today())))
+        download_widget(dfABC_complex,key="complex_download",download_file="MMult_%s.csv" % (str(date.today())))
 
 
 if __name__ == "__main__":
