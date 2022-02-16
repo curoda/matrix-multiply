@@ -38,12 +38,12 @@ def Read_and_Display(key=0):
     #file1 = st.file_uploader("Choose a file", "xlsx", key=key+1)
     
     # location of the data in the file
-    sheet1 = st.text_input("Excel Sheet", "Sheet1", key=key+2)
+    #sheet1 = st.text_input("Excel Sheet", "Sheet1", key=key+2)
     startingrow1 = int(st.text_input("Starting Row", 2,key=key+3))
     matsize1 = int(st.text_input("Matrix Dimension", 25, key=key+4))
     if file1!=None:
         # read in the matrix
-        df1 = pd.read_excel(file1, sheet1, skiprows = startingrow1-1, usecols = list(range(0,matsize1)), index_col=None, header=None,nrows=matsize1,engine='openpyxl')
+        df1 = pd.read_excel(file1, sheet_name=0, skiprows = startingrow1-1, usecols = list(range(0,matsize1)), index_col=None, header=None,nrows=matsize1,engine='openpyxl')
         df1 = df1.applymap(str)
         # numpy uses j for the imaginary variable 
         df1 = df1.replace({'i' : 'j'},regex=True)
